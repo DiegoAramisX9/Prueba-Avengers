@@ -142,6 +142,8 @@ bool Game::visitPlanet(const string& planetName) {
         // Player lost the minigame
         player.loseLife();
         cout << "You failed the challenge. -1 life." << endl;
+        cout << "hola" <<endl;
         return false; // Stay on the same planet and retry
     }
 }
+
