@@ -3,6 +3,8 @@
 #include "miniGames/MemoryGame.h"
 #include "miniGames/ReactionGame.h"
 #include "miniGames/MixLaboratory.h"
+#include "miniGames/Encrypted.h"
+#include "miniGames/OddOneGame.h"
 
 
 using namespace std;
@@ -99,7 +101,7 @@ bool Game::visitPlanet(const string& planetName) {
         // Different entry messages for each planet
         if (planetName == "Mercury") {
             cout << "You navigate through intense solar flares..." << endl;
-            result = memoryGame();
+         result = memoryGame();
         } else if (planetName == "Venus") {
             cout << "You brave the corrosive acid rain..." << endl;
             result= PlayMixLaboratory();
@@ -117,6 +119,8 @@ bool Game::visitPlanet(const string& planetName) {
             result = reactionGame();
         } else if (planetName == "Venus") {
             cout << "You fly through the toxic cloud layers..." << endl;
+             result = encryptedGame();
+
         } else if (planetName == "Mars") {
             cout << "You explore the mysterious ancient ruins..." << endl;
         } else if (planetName == "Jupiter") {
