@@ -17,7 +17,7 @@ El juego ira avanzando mediante una historia contada el cual el jugador tendra l
 ## Imágenes o mockups del juego
 
 ## Nombres completos de todos los integrantes
-1. Diego Aramis Villanueva Caballero 
+1. Diego Aramis Villanueva Caballero \n
    **Carnet**: 00090225
 2. Carlos Javier Sanchez Alvarado
    **Carnet**: 00062725
