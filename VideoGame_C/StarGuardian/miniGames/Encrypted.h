@@ -7,6 +7,6 @@
 std::string getRandomWord(const std::vector<std::string>& wordList);
 std::string shuffleLetters(const std::string& word);
 bool checkAnswer(const std::string& original, const std::string& answer);
-bool encryptedGame();
+bool EncryptedGame();
 
-#endif 
+#endif

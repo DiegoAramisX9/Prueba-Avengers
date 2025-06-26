@@ -107,6 +107,7 @@ bool Game::visitPlanet(const string& planetName) {
             result= PlayMixLaboratory();
         } else if (planetName == "Mars") {
             cout << "You push through the blinding sandstorm..." << endl;
+            result = oddOneGame();
         } else if (planetName == "Jupiter") {
             cout << "You enter the massive Great Red Spot..." << endl;
         }
