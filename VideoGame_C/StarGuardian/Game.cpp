@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Game.h"
-#include "miniGames/MemoryGame.h"
-#include "miniGames/ReactionGame.h"
-#include "miniGames/MixLaboratory.h"
-#include "miniGames/Encrypted.h"
-#include "miniGames/OddOneGame.h"
+#include "src/Game.h"
+#include "src/MemoryGame.h"
+#include "src/ReactionGame.h"
+#include "src/MixLaboratory.h"
+#include "src/Encrypted.h"
+#include "src/OddOneGame.h"
 
 
 using namespace std;

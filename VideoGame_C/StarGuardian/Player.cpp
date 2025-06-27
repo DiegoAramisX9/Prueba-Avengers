@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "src/Player.h"
 
 Player::Player() {
     lives = 3;
