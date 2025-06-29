@@ -51,7 +51,7 @@ bool MathDuel()
 
         if(elapsed.count() > 5.0)
         {
-              cout << "⏱ Too slow! You took " << elapsed.count() << " seconds.\n";
+              cout << "Too slow! You took " << elapsed.count() << " seconds.\n";
               continue; 
         }
 
