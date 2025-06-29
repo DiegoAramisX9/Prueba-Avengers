@@ -5,6 +5,7 @@
 #include "src/MixLaboratory.h"
 #include "src/Encrypted.h"
 #include "src/OddOneGame.h"
+#include "src/mathDuel.h"
 
 
 using namespace std;
@@ -124,6 +125,7 @@ bool Game::visitPlanet(const string& planetName) {
 
         } else if (planetName == "Mars") {
             cout << "You explore the mysterious ancient ruins..." << endl;
+            result = MathDuel();
         } else if (planetName == "Jupiter") {
             cout << "You navigate through the violent gas storms..." << endl;
         }

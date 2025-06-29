@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 
 //Game functions
 void show_start_screen();
