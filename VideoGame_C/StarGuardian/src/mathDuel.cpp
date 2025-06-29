@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "mathDuel.h"
+#include <chrono>
 
 using namespace std; 
 
@@ -10,10 +11,10 @@ bool MathDuel()
     int correctAnswers = 0;
     
     cout<<"Welcome to Math Duel"<<endl;
-    cout<<"You hace to solve the following mathematical exercises.."<<endl;
+    cout<<"You have to solve the following mathematical exercises.."<<endl;
     cout << "Solve at least 3 out of 5 to win!" << endl;
 
-    for(int i = 0; i <= 5; i++)
+    for(int i = 1; i <= 5; i++)
     {
          int num1 = rand() % 10 + 1;
          int num2 = rand() % 10 + 1; 
@@ -38,9 +39,21 @@ bool MathDuel()
                 break;
         }
 
+        
         cout << "Question " << i << ": " << num1 << " " << symbol << " " << num2 << " = ";
         int answer;
+
+        auto start = chrono::steady_clock::now();
         cin >> answer;
+        auto end = chrono::steady_clock::now();
+
+        chrono::duration<double> elapsed = end - start;
+
+        if(elapsed.count() > 5.0)
+        {
+              cout << "⏱ Too slow! You took " << elapsed.count() << " seconds.\n";
+              continue; 
+        }
 
         if(answer == result)
         {
@@ -53,7 +66,7 @@ bool MathDuel()
     }
     cout << "\nYou got " << correctAnswers << " out of 5 right." << endl;
 
-    if(correctAnswers > 3)
+    if(correctAnswers >= 3)
     {
         cout << "You win the math duel!" << endl;
         return true;
