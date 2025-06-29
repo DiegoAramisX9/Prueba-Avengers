@@ -40,7 +40,7 @@ void show_start_screen()
     }
 }
 
-void galactic_escape_play()
+bool galactic_escape_play()
 {
     show_start_screen();
 
@@ -48,6 +48,8 @@ void galactic_escape_play()
     int playerLane = 1;
     int score = 0;
     bool gameOver = false;
+
+    bool playerwon = false;
 
     srand(time(0));
 
@@ -104,7 +106,7 @@ void galactic_escape_play()
         {
             gameOver = true;
             cout << "\nCrash! GAME OVER.\n";
-            break;
+            playerwon = false;
         }
 
         //Check if you reached the goal
@@ -112,7 +114,7 @@ void galactic_escape_play()
         {
             gameOver = true;
             cout << "\nYou did it — you made your great escape!\n";
-            break;
+            playerwon = true;
         }
 
         //Read input (with keys A and D)
@@ -135,4 +137,6 @@ void galactic_escape_play()
 
     cout << "\nSee you Space Guardian.\n";
     system("pause");
-}
+
+    return playerwon;
+}  

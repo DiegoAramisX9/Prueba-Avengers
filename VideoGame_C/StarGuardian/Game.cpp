@@ -6,6 +6,7 @@
 #include "src/Encrypted.h"
 #include "src/OddOneGame.h"
 #include "src/mathDuel.h"
+#include "src/galactic_escape.h"
 
 
 using namespace std;
@@ -111,6 +112,7 @@ bool Game::visitPlanet(const string& planetName) {
             result = oddOneGame();
         } else if (planetName == "Jupiter") {
             cout << "You enter the massive Great Red Spot..." << endl;
+            result = galactic_escape_play();
         }
         
 

@@ -3,4 +3,4 @@
 //Game functions
 void show_start_screen();
 
-void galactic_escape_play();
+bool galactic_escape_play();   
