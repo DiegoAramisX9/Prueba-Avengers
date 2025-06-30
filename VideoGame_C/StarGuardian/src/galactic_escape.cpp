@@ -136,7 +136,10 @@ bool galactic_escape_play()
     }
 
     cout << "\nSee you Space Guardian.\n";
-    system("pause");
+    
+    cout << "Press any key to continue...";
+    _getch();
 
     return playerwon;
 }  
+
