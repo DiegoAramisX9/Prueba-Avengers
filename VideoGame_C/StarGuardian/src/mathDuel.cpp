@@ -3,6 +3,8 @@
 #include <ctime>
 #include "mathDuel.h"
 #include <chrono>
+#include <windows.h>
+#include "Utils.h"
 
 using namespace std; 
 
@@ -10,8 +12,22 @@ bool MathDuel()
 {
     int correctAnswers = 0;
     
-    cout<<"Welcome to Math Duel"<<endl;
-    cout<<"You have to solve the following mathematical exercises.."<<endl;
+    setColor(12); // Blue
+cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+setColor(9); // Yellow (ASCII)
+cout << R"(
+ ____    ____         _   __       ______                    __   
+|_   \  /   _|       / |_[  |     |_   _ `.                 [  |  
+  |   \/   |   ,--. `| |-'| |--.    | | `. \ __   _   .---.  | |  
+  | |\  /| |  `'_\ : | |  | .-. |   | |  | |[  | | | / /__\\ | |  
+ _| |_\/_| |_ // | |,| |, | | | |  _| |_.' / | \_/ |,| \__., | |  
+|_____||_____|\'-;__/\__/[___]|__]|______.'  '.__.'_/ '.__.'[___] 
+)" << endl;
+setColor(12); // Blue
+cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+setColor(7); // Reset
+   
+    cout<<"You have to solve the following mathematical exercises, also you have 5 seconds..."<<endl;
     cout << "Solve at least 3 out of 5 to win!" << endl;
 
     for(int i = 1; i <= 5; i++)

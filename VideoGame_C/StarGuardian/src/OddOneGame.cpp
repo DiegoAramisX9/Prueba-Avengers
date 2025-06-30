@@ -3,6 +3,8 @@
 #include <random>
 #include <ctime>
 #include "OddOneGame.h"
+#include <windows.h>
+#include "Utils.h"
 
 using namespace std;
 
@@ -18,6 +20,20 @@ bool oddOneGame() {
     int oddRow = rand() % size;
     int oddCol = rand() % size;
     grid[oddRow][oddCol] = oddNum;
+
+    setColor(9); // Blue
+cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+setColor(12); // Yellow (ASCII)
+cout << R"(
+   ____      __    ______             ______                   
+  / __ \____/ /___/ / __ \____  ___  / ____/___ _____ ___  ___ 
+ / / / / __  / __  / / / / __ \/ _ \/ / __/ __ `/ __ `__ \/ _ \
+/ /_/ / /_/ / /_/ / /_/ / / / /  __/ /_/ / /_/ / / / / / /  __/
+\____/\__,_/\__,_/\____/_/ /_/\___/\____/\__,_/_/ /_/ /_/\___/                 
+)" << endl;
+setColor(9); // Blue
+cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+setColor(7); // Reset
 
     cout << "Find the different number on the matrix" << endl;
     for (const auto& row : grid) {
