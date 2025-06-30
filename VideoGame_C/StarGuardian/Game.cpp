@@ -1,3 +1,4 @@
+#include <windows.h> 
 #include <iostream>
 #include "src/Game.h"
 #include "src/MemoryGame.h"
@@ -7,9 +8,12 @@
 #include "src/OddOneGame.h"
 #include "src/mathDuel.h"
 #include "src/galactic_escape.h"
+#include "src/Utils.h"
 
 
 using namespace std;
+
+
 
 void Game::start() {
     showMainMenu();
@@ -46,17 +50,29 @@ void Game::start() {
 }
 
 void Game::showMainMenu() {
-    cout << "====== Star Guardian ======" << endl;
-    cout << "1. Start adventure" << endl;
-    cout << "2. Exit" << endl;
+    system("chcp 65001 > nul"); // Change to UTF-8
+    system("cls"); // clean the window.
+
+    setColor(11); // Blue
+    cout << "╔════════════════════════════════╗" << endl;
+    cout << "║        🌌 STAR GUARDIAN       ║" << endl;
+    cout << "╠════════════════════════════════╣" << endl;
+    cout << "║  1. 🚀 Start Adventure         ║" << endl;
+    cout << "║  2. ❌ Exit                    ║" << endl;
+    cout << "╚════════════════════════════════╝" << endl;
+    setColor(7); // come back to grey color
+
+    cout << "Choose an option: ";
 
     int option;
     cin >> option;
 
     if (option == 1) {
-        cout << "Starting story..." << endl;
+        cout << "\nStarting your galactic mission..." << endl;
+        Sleep(1000); 
     } else {
-        cout << "Goodbye, Guardian." << endl;
+        cout << "\nGoodbye, Guardian." << endl;
+        exit(0); 
     }
 }
 
