@@ -30,11 +30,7 @@ bool checkAnswer(const std::string& original, const std::string& answer) {
 }
 
 // Main game logic
-<<<<<<< HEAD:VideoGame_C/StarGuardian/miniGames/Encrypted.cpp
-bool EncryptedGame() {
-=======
 bool encryptedGame() {  
->>>>>>> 3e41750871dd51aabca6388ff10bc3ecbd3a834e:VideoGame_C/StarGuardian/src/Encrypted.cpp
     srand((unsigned)time(0));
     std::vector<std::string> wordList = {"ASTEROID", "ASTRONAUT", "ATMOSPHERE", "PLANETARY", "ENIGMA", "GUARDIAN"};
     int maxAttempts = 3;

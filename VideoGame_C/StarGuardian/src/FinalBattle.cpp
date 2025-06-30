@@ -3,7 +3,7 @@
 #include <ctime>
 #include <string>
 #include <vector>
-#include "finalbattle.h"
+#include "FinalBattle.h"
 
 using namespace std;
 
@@ -37,7 +37,7 @@ bool processShot(const string& enemyDirection, const string& shot) {
     return enemyDirection == shot;
 }
 
-bool finalbattle() { 
+bool finalBattle() { 
     srand(time(0));
 
     const int maxEnergy = 10;

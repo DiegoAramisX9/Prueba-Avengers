@@ -9,7 +9,7 @@
 #include "src/mathDuel.h"
 #include "src/galactic_escape.h"
 #include "src/Utils.h"
-
+#include "src/FinalBattle.h"
 
 using namespace std;
 
@@ -79,7 +79,37 @@ void Game::showMainMenu() {
 bool Game::visitPlanet(const string& planetName) {
     
     cout << "\nArriving at planet: " << planetName << endl;
-    
+    bool result = false;
+    // === SPECIAL FINAL PLANET: NEPTUNE ===
+    if (planetName == "Neptune") {
+        cout << "\n🌌 Welcome to Neptune... the Final Frontier." << endl;
+        cout << "This is your last challenge. No second chances." << endl;
+        cout << "Are you ready for the final challenge? Press X to begin..." << endl;
+
+        char input;
+        cin >> input;
+
+        if (input != 'x' && input != 'X') {
+            cout << "You hesitated. The challenge fades away..." << endl;
+            player.loseLife();
+            return false;
+        }
+
+        // Final minigame execution
+          result = finalBattle();
+
+        if (result) {
+            int reward = 200;
+            player.earnMoney(reward);
+            cout << "You won the final challenge! +200 coins." << endl;
+            return true;
+        } else {
+            player.loseLife();
+            cout << "You failed the final battle. -1 life." << endl;
+            return false;
+        }
+    }
+
     // Different descriptions for each planet
     if (planetName == "Mercury") {
         cout << "The closest planet to the sun. Extreme temperatures await..." << endl;
@@ -113,7 +143,7 @@ bool Game::visitPlanet(const string& planetName) {
     int choice;
     cin >> choice;
 
-    bool result = false;
+    
 
     if (choice == 1) {
         // Different entry messages for each planet
@@ -146,24 +176,10 @@ bool Game::visitPlanet(const string& planetName) {
             result = MathDuel();
         } else if (planetName == "Jupiter") {
             cout << "You navigate through the violent gas storms..." << endl;
-        }else if (planetName == "Neptune") {
-           cout << "\n🌌 Welcome to Neptune... the Final Frontier." << endl;
-           cout << "This is your last challenge. No second chances." << endl;
-           cout << "Are you ready for the final challenge? Press X to begin..." << endl;
-
-           char input;
-           cin >> input;
-           if (input != 'x' && input != 'X') {
-               cout << "You hesitated. The challenge fades away..." << endl;
-                return false;
-            }
-
-           // Final challenge minigame
-          //result = finalBossMinigame(); // In this part you will put the minigame 
-}
+        }
        // read this: Connect the real reaction game function here
         
-    } else {
+    }else {
         cout << "Invalid choice. You hesitate and lose a turn." << endl;
         player.loseLife();
         return false;

@@ -10,7 +10,7 @@ const int LANES = 4;
 const char PLAYER_CHAR = 'A';
 const char OBSTACLE_CHAR = 'x';
 const char EMPTY_CHAR = '.';
-const int GOAL_SCORE = 200;
+const int GOAL_SCORE = 100;
 
 
 void show_start_screen()
