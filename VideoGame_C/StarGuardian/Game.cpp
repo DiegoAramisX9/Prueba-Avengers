@@ -19,8 +19,8 @@ void Game::start() {
     showMainMenu();
 
     // Array of planets to visit
-    string planets[] = {"Mercury", "Venus", "Mars", "Jupiter"};
-    int totalPlanets = 4;
+    string planets[] = {"Mercury", "Venus", "Mars", "Jupiter", "Neptune"};
+    int totalPlanets = 5;
     int currentPlanet = 0;
 
     // Visit each planet in sequence
@@ -146,7 +146,21 @@ bool Game::visitPlanet(const string& planetName) {
             result = MathDuel();
         } else if (planetName == "Jupiter") {
             cout << "You navigate through the violent gas storms..." << endl;
-        }
+        }else if (planetName == "Neptune") {
+           cout << "\n🌌 Welcome to Neptune... the Final Frontier." << endl;
+           cout << "This is your last challenge. No second chances." << endl;
+           cout << "Are you ready for the final challenge? Press X to begin..." << endl;
+
+           char input;
+           cin >> input;
+           if (input != 'x' && input != 'X') {
+               cout << "You hesitated. The challenge fades away..." << endl;
+                return false;
+            }
+
+           // Final challenge minigame
+          //result = finalBossMinigame(); // In this part you will put the minigame 
+}
        // read this: Connect the real reaction game function here
         
     } else {
