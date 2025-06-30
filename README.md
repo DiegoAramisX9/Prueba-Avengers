@@ -3,7 +3,7 @@
   Star guardian 
 
 ## Temática y ambientación
-Star guardian es un juego de aventura, logica y accion. Estara ambientado en la actualidad, especificamente 
+Star guardian es un juego de aventura, logica y accion. Estara ambientado en el espacio, en nuestro sistema solar. Star guardian sera el heroe de la tierra devolviendole el equilibrio al sistema solar que tiene una reliquia que lo controla 
 
 ## Mecánica principal
 

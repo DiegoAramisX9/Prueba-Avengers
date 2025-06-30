@@ -5,6 +5,7 @@
 #include "miniGames/MixLaboratory.h"
 #include "miniGames/Encrypted.h"
 #include "miniGames/OddOneGame.h"
+#include "miniGames/FinalBattle.h"
 
 
 using namespace std;
@@ -13,7 +14,7 @@ void Game::start() {
     showMainMenu();
 
     // Array of planets to visit
-    string planets[] = {"Mercury", "Venus", "Mars", "Jupiter"};
+    string planets[] = {"Mars", "Jupiter", "Saturn", "Uranus", "Pluton"};
     int totalPlanets = 4;
     int currentPlanet = 0;
 
@@ -63,29 +64,29 @@ bool Game::visitPlanet(const string& planetName) {
     cout << "\nArriving at planet: " << planetName << endl;
     
     // Different descriptions for each planet
-    if (planetName == "Mercury") {
+    if (planetName == "Mars") {
         cout << "The closest planet to the sun. Extreme temperatures await..." << endl;
-    } else if (planetName == "Venus") {
-        cout << "The hottest planet in our solar system. Acid rain falls from toxic clouds..." << endl;
-    } else if (planetName == "Mars") {
-        cout << "The red planet. Ancient ruins and mysterious signals detected..." << endl;
     } else if (planetName == "Jupiter") {
+        cout << "The hottest planet in our solar system. Acid rain falls from toxic clouds..." << endl;
+    } else if (planetName == "Saturn") {
+        cout << "The red planet. Ancient ruins and mysterious signals detected..." << endl;
+    } else if (planetName == "Uranus") {
         cout << "The largest planet. Massive storms rage across its surface..." << endl;
-    }
+    } 
     
     cout << "You must choose a path:" << endl;
     
     // Different path options for each planet
-    if (planetName == "Mercury") {
+    if (planetName == "Mars") {
         cout << "1. Path through solar flares (leads to Memory Game)" << endl;
         cout << "2. Path through meteor shower (leads to Reaction Game)" << endl;
-    } else if (planetName == "Venus") {
+    } else if (planetName == "Jupiter") {
         cout << "1. Path through acid rain (leads to Memory Game)" << endl;
         cout << "2. Path through toxic clouds (leads to Reaction Game)" << endl;
-    } else if (planetName == "Mars") {
+    } else if (planetName == "Saturn") {
         cout << "1. Path through sandstorm (leads to Memory Game)" << endl;
         cout << "2. Path through ancient ruins (leads to Reaction Game)" << endl;
-    } else if (planetName == "Jupiter") {
+    } else if (planetName == "Uranus") {
         cout << "1. Path through the Great Red Spot (leads to Memory Game)" << endl;
         cout << "2. Path through gas storms (leads to Reaction Game)" << endl;
     }
@@ -99,48 +100,55 @@ bool Game::visitPlanet(const string& planetName) {
 
     if (choice == 1) {
         // Different entry messages for each planet
-        if (planetName == "Mercury") {
+        if (planetName == "Mars") {
             cout << "You navigate through intense solar flares..." << endl;
          result = memoryGame();
-        } else if (planetName == "Venus") {
+        } else if (planetName == "Jupiter") {
             cout << "You brave the corrosive acid rain..." << endl;
             result= PlayMixLaboratory();
-        } else if (planetName == "Mars") {
+        } else if (planetName == "Saturn") {
             cout << "You push through the blinding sandstorm..." << endl;
             result = oddOneGame();
-        } else if (planetName == "Jupiter") {
+        } else if (planetName == "Uranus") {
             cout << "You enter the massive Great Red Spot..." << endl;
         }
         
 
     } else if (choice == 2) {
         // Different entry messages for each planet
-        if (planetName == "Mercury") {
+        if (planetName == "Mars") {
             cout << "You dodge through the meteor shower..." << endl;
             result = reactionGame();
-        } else if (planetName == "Venus") {
-            cout << "You fly through the toxic cloud layers..." << endl;
-             result = encryptedGame();
-
-        } else if (planetName == "Mars") {
-            cout << "You explore the mysterious ancient ruins..." << endl;
         } else if (planetName == "Jupiter") {
+            cout << "You fly through the toxic cloud layers..." << endl;
+            result = EncryptedGame();
+        } else if (planetName == "Saturn") {
+            cout << "You explore the mysterious ancient ruins..." << endl;
+        } else if (planetName == "Uranus") {
             cout << "You navigate through the violent gas storms..." << endl;
         }
-       // read this: Connect the real reaction game function here
-        
-    } else {
-        cout << "Invalid choice. You hesitate and lose a turn." << endl;
-        player.loseLife();
-        return false;
+        // read this: Connect the real reaction game function here
+    }
+    
+    if (planetName == "Pluton") {
+        cout << "\n¡It seems like you have finally reach your final destination guardian!" << endl;
+        cout << "Press 'X' to start the final chapter but, be sure to be ready..." << endl;
+        char tecla;
+        do {
+            cout << "\nPress 'X' to continue: ";
+            cin >> tecla;
+            tecla = toupper(tecla);
+        } while (tecla != 'X');
+        result = finalBattle();
+        return result;
     }
 
     if (result) {
         // Different rewards for each planet
         int reward = 50;
-        if (planetName == "Venus") reward = 75;
-        else if (planetName == "Mars") reward = 100;
-        else if (planetName == "Jupiter") reward = 150;
+        if (planetName == "Jupiter") reward = 75;
+        else if (planetName == "Saturn") reward = 100;
+        else if (planetName == "Uranus") reward = 150;
         
         // Player won the minigame
         player.earnMoney(reward);
