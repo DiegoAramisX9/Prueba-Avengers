@@ -1,4 +1,6 @@
+#include <windows.h> 
 #include <iostream>
+<<<<<<< HEAD
 #include "Game.h"
 #include "miniGames/MemoryGame.h"
 #include "miniGames/ReactionGame.h"
@@ -6,9 +8,22 @@
 #include "miniGames/Encrypted.h"
 #include "miniGames/OddOneGame.h"
 #include "miniGames/FinalBattle.h"
+=======
+#include "src/Game.h"
+#include "src/MemoryGame.h"
+#include "src/ReactionGame.h"
+#include "src/MixLaboratory.h"
+#include "src/Encrypted.h"
+#include "src/OddOneGame.h"
+#include "src/mathDuel.h"
+#include "src/galactic_escape.h"
+#include "src/Utils.h"
+>>>>>>> 3e41750871dd51aabca6388ff10bc3ecbd3a834e
 
 
 using namespace std;
+
+
 
 void Game::start() {
     showMainMenu();
@@ -45,17 +60,29 @@ void Game::start() {
 }
 
 void Game::showMainMenu() {
-    cout << "====== Star Guardian ======" << endl;
-    cout << "1. Start adventure" << endl;
-    cout << "2. Exit" << endl;
+    system("chcp 65001 > nul"); // Change to UTF-8
+    system("cls"); // clean the window.
+
+    setColor(11); // Blue
+    cout << "╔════════════════════════════════╗" << endl;
+    cout << "║        🌌 STAR GUARDIAN       ║" << endl;
+    cout << "╠════════════════════════════════╣" << endl;
+    cout << "║  1. 🚀 Start Adventure         ║" << endl;
+    cout << "║  2. ❌ Exit                    ║" << endl;
+    cout << "╚════════════════════════════════╝" << endl;
+    setColor(7); // come back to grey color
+
+    cout << "Choose an option: ";
 
     int option;
     cin >> option;
 
     if (option == 1) {
-        cout << "Starting story..." << endl;
+        cout << "\nStarting your galactic mission..." << endl;
+        Sleep(1000); 
     } else {
-        cout << "Goodbye, Guardian." << endl;
+        cout << "\nGoodbye, Guardian." << endl;
+        exit(0); 
     }
 }
 
@@ -111,6 +138,7 @@ bool Game::visitPlanet(const string& planetName) {
             result = oddOneGame();
         } else if (planetName == "Uranus") {
             cout << "You enter the massive Great Red Spot..." << endl;
+            result = galactic_escape_play();
         }
         
 
@@ -119,6 +147,16 @@ bool Game::visitPlanet(const string& planetName) {
         if (planetName == "Mars") {
             cout << "You dodge through the meteor shower..." << endl;
             result = reactionGame();
+<<<<<<< HEAD
+=======
+        } else if (planetName == "Venus") {
+            cout << "You fly through the toxic cloud layers..." << endl;
+             result = encryptedGame();
+
+        } else if (planetName == "Mars") {
+            cout << "You explore the mysterious ancient ruins..." << endl;
+            result = MathDuel();
+>>>>>>> 3e41750871dd51aabca6388ff10bc3ecbd3a834e
         } else if (planetName == "Jupiter") {
             cout << "You fly through the toxic cloud layers..." << endl;
             result = EncryptedGame();

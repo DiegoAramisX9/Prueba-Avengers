@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "src/Game.h"
 #include <cstdlib>  // srand and rand
 #include <ctime>    // time
 

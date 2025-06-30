@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <ctime>
 #include "Encrypted.h"
+#include <windows.h>
+#include "Utils.h"
 
 // choose a random word from the list 
 std::string getRandomWord(const std::vector<std::string>& wordList) {
@@ -28,14 +30,33 @@ bool checkAnswer(const std::string& original, const std::string& answer) {
 }
 
 // Main game logic
+<<<<<<< HEAD:VideoGame_C/StarGuardian/miniGames/Encrypted.cpp
 bool EncryptedGame() {
+=======
+bool encryptedGame() {  
+>>>>>>> 3e41750871dd51aabca6388ff10bc3ecbd3a834e:VideoGame_C/StarGuardian/src/Encrypted.cpp
     srand((unsigned)time(0));
     std::vector<std::string> wordList = {"ASTEROID", "ASTRONAUT", "ATMOSPHERE", "PLANETARY", "ENIGMA", "GUARDIAN"};
     int maxAttempts = 3;
     int level = 1;
     bool exitGame = false;
 
-    std::cout << "Welcome. Decode the secret word to leave the planet.\n";
+    setColor(14); // Blue
+std::cout << "╔══════════════════════════════════════════════════════════════╗" << std::endl;
+setColor(12); // Yellow (ASCII)
+std::cout << R"(
+   __                            _           _     ___                     
+  /__\ __   ___ _ __ _   _ _ __ | |_ ___  __| |   / _ \__ _ _ __ ___   ___ 
+ /_\| '_ \ / __| '__| | | | '_ \| __/ _ \/ _` |  / /_\/ _` | '_ ` _ \ / _ \
+//__| | | | (__| |  | |_| | |_) | ||  __/ (_| | / /_\\ (_| | | | | | |  __/
+\__/|_| |_|\___|_|   \__, | .__/ \__\___|\__,_| \____/\__,_|_| |_| |_|\___|
+                     |___/|_|                                              
+)" << std::endl;
+setColor(14); // Blue
+std::cout << "╚══════════════════════════════════════════════════════════════╝" << std::endl;
+setColor(7); // Reset
+
+    std::cout << "Decode the secret word to leave the planet.\n";
 
     while (!exitGame) {
         // Choose a random word and remove it from the vector to avoid repetition.

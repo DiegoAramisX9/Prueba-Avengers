@@ -4,12 +4,26 @@
 #include <random>    // for random_device
 #include <chrono>    // for seeding
 #include <algorithm> // for shuffle
+#include <windows.h>
+#include "Utils.h"
 
 using namespace std;
 
 bool memoryGame()
 {
-   cout<<"== This is the Memory Game =="<<endl;
+setColor(14); // Blue
+cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+setColor(9); // Yellow (ASCII)
+cout << R"(
+ _      _____ _      ____  ____ ___  _   _____ ____  _      _____
+/ \__/|/  __// \__/|/  _ \/  __\\  \//  /  __//  _ \/ \__/|/  __/
+| |\/|||  \  | |\/||| / \||  \/| \  /   | |  _| / \|| |\/|||  \  
+| |  |||  /_ | |  ||| \_/||    / / /    | |_//| |-||| |  |||  /_ 
+\_/  \|\____\\_/  \|\____/\_/\_\/_/     \____\\_/ \|\_/  \|\____\
+)" << endl;
+setColor(14); // Blue
+cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+setColor(7); // Reset
    
    cout << "Match at least one pair in 3 tries to win!" << endl;
 
@@ -56,7 +70,9 @@ bool memoryGame()
 
         if(cards[pos1] == cards[pos2])
         { 
+            setColor(10);
             cout<<"Its a match!!!" << endl;
+            setColor(7);
             revealed[pos1] = true;
             revealed[pos2] = true;
             pairsFound++;
