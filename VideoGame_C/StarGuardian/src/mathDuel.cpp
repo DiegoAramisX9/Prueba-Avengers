@@ -55,7 +55,6 @@ setColor(7); // Reset
                 break;
         }
 
-        
         cout << "Question " << i << ": " << num1 << " " << symbol << " " << num2 << " = ";
         int answer;
 
