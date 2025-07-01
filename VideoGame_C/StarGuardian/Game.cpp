@@ -125,17 +125,17 @@ bool Game::visitPlanet(const string& planetName) {
     
     // Different path options for each planet
     if (planetName == "Mercury") {
-        cout << "1. Path through solar flares (leads to Memory Game)" << endl;
-        cout << "2. Path through meteor shower (leads to Reaction Game)" << endl;
+        cout << "1. Surviving the Solar Flames: Test your memory to survive the intense glare. (leads to Memory Game)" << endl;
+        cout << "2. React in milliseconds! The slightest carelessness and you'll be hit by the space storm.. (leads to Reaction Game)" << endl;
     } else if (planetName == "Venus") {
-        cout << "1. Path through acid rain (leads to Memory Game)" << endl;
-        cout << "2. Path through toxic clouds (leads to Reaction Game)" << endl;
+        cout << "1. Precisely combine hidden elements… or face the consequences of an unexpected reaction. (leads to Mix Laboratory)" << endl;
+        cout << "2. Solve the encrypted mysteries that guard the path. Your logic is the key to survival. (leads to Encrypted Game)" << endl;
     } else if (planetName == "Mars") {
-        cout << "1. Path through sandstorm (leads to Memory Game)" << endl;
-        cout << "2. Path through ancient ruins (leads to Reaction Game)" << endl;
+        cout << "1. Test your hawk's eye and find out which object dared to sneak in where it doesn't belong. (leads to OddOne Game)" << endl;
+        cout << "2. Face your opponent in a battle of numbers. The quickest mind will master the math of combat. (leads to MathDuel)" << endl;
     } else if (planetName == "Jupiter") {
-        cout << "1. Path through the Great Red Spot (leads to Memory Game)" << endl;
-        cout << "2. Path through gas storms (leads to Reaction Game)" << endl;
+        cout << "1. Run for your life among asteroids and cosmic chaos. Only your reflexes can save you from stellar disaster. (leads to Galactic Scape Game)" << endl;
+        cout << "2. Path through gas storms (leads to Juego pendiente por agregar)" << endl;
     }
     
     cout << "Choose your path (1 or 2): ";
@@ -149,15 +149,23 @@ bool Game::visitPlanet(const string& planetName) {
         // Different entry messages for each planet
         if (planetName == "Mercury") {
             cout << "In one corner of the universe, balance is at stake. As a Space Ranger, your mission is to restore order and protect galactic peace. Your journey begins on Mercury, the fiery sentinel of the solar system. The extreme heat tests your ship and your courage, but you know that every mission begins with a brave first step." << endl;
+            cout << "You have chosen the path of solar flares." << endl;
+            cout << "In this game, you'll test your vision. Pay close attention to the sequence of symbols that appear and repeat them in the same order. Only then will you be able to pass through the flames and advance on your mission!" << endl;
          result = memoryGame();
         } else if (planetName == "Venus") {
             cout << "After overcoming the trials of Mercury, you arrive on Venus. Toxic clouds and acid rain hide ancient secrets. Here, the Guardian must rely on their wits to navigate the beauty and danger, while the forces of chaos lurk in the shadows." << endl;
+            cout << "You have decided to cross the acid rain of Venus"<<endl;
+               cout << "Mix the elements in the correct order to create a protective substance. If you fail, acid rain will damage your ship."<<endl;
             result= PlayMixLaboratory();
         } else if (planetName == "Mars") {
             cout << "The journey takes you to Mars, the red planet. Amidst forgotten ruins and mysterious signs, you feel you are not alone. Every step reveals fragments of a lost civilization and unexpected challenges, but your determination to restore order does not waver." << endl;
+            cout<< "You enter the Martian sandstorm." <<endl;
+             cout<< "Analyze the objects that appear and select the one that doesn't belong in the group. Only the most attentive will be able to escape the storm!" <<endl;
             result = oddOneGame();
         } else if (planetName == "Jupiter") {
             cout << "Your ship is approaching Jupiter, the giant of eternal storms. Colossal lightning and winds threaten your mission, but the hope of restoring harmony to the universe drives you forward, facing your greatest dangers yet." << endl;
+            cout << "You launch yourself into Jupiter's Great Red Spot." <<endl;
+             cout << "Instructions: Dodge the obstacles that appear in your path and keep moving to survive the storm." <<endl;
             result = galactic_escape_play();
         }
         
@@ -165,17 +173,25 @@ bool Game::visitPlanet(const string& planetName) {
     } else if (choice == 2) {
         // Different entry messages for each planet
         if (planetName == "Mercury") {
-            cout << "You dodge through the meteor shower..." << endl;
+             cout << "In one corner of the universe, balance is at stake. As a Space Ranger, your mission is to restore order and protect galactic peace. Your journey begins on Mercury, the fiery sentinel of the solar system. The extreme heat tests your ship and your courage, but you know that every mission begins with a brave first step." << endl;
+            cout << "You have chosen the path of solar flares." << endl;
+            cout << "When you see the signal, press the indicated key as quickly as possible to avoid the meteorites and survive the space danger."<< endl;
             result = reactionGame();
         } else if (planetName == "Venus") {
-            cout << "You fly through the toxic cloud layers..." << endl;
+            cout << "After overcoming the trials of Mercury, you arrive on Venus. Toxic clouds and acid rain hide ancient secrets. Here, the Guardian must rely on their wits to navigate the beauty and danger, while the forces of chaos lurk in the shadows." << endl;
+            cout << "You have decided to cross the acid rain of Venus"<<endl;
+            cout << "Solve the puzzle presented to unlock the passage and continue your mission." << endl;
              result = encryptedGame();
 
         } else if (planetName == "Mars") {
-            cout << "You explore the mysterious ancient ruins..." << endl;
+            cout << "The journey takes you to Mars, the red planet. Amidst forgotten ruins and mysterious signs, you feel you are not alone. Every step reveals fragments of a lost civilization and unexpected challenges, but your determination to restore order does not waver." << endl;
+            cout<< "You enter the Martian sandstorm." <<endl;
+            cout<< "Correctly answer the math challenges before your opponent to win the duel and advance." <<endl;
             result = MathDuel();
         } else if (planetName == "Jupiter") {
-            cout << "You navigate through the violent gas storms..." << endl;
+            cout << "Your ship is approaching Jupiter, the giant of eternal storms. Colossal lightning and winds threaten your mission, but the hope of restoring harmony to the universe drives you forward, facing your greatest dangers yet." << endl;
+            cout << "You launch yourself into Jupiter's Great Red Spot." <<endl;
+            cout << "Descripcion del juego pendiente" <<endl;
         }
        // read this: Connect the real reaction game function here
         
