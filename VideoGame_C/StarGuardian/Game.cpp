@@ -10,6 +10,7 @@
 #include "src/galactic_escape.h"
 #include "src/Utils.h"
 #include "src/FinalBattle.h"
+#include "src/gravity_game.h"
 
 using namespace std;
 
@@ -192,6 +193,7 @@ bool Game::visitPlanet(const string& planetName) {
             cout << "Your ship is approaching Jupiter, the giant of eternal storms. Colossal lightning and winds threaten your mission, but the hope of restoring harmony to the universe drives you forward, facing your greatest dangers yet." << endl;
             cout << "You launch yourself into Jupiter's Great Red Spot." <<endl;
             cout << "Descripcion del juego pendiente" <<endl;
+            result = gravityMaze();
         }
        // read this: Connect the real reaction game function here
         
