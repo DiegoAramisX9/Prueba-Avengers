@@ -68,10 +68,10 @@ void Game::showMainMenu() {
     cin >> option;
 
     if (option == 1) {
-        cout << "\nStarting your galactic mission..." << endl;
+        cout << "\nPreparing the ship for your galactic mission, fasten your seatbelts and get ready..." << endl;
         Sleep(1000); 
     } else {
-        cout << "\nGoodbye, Guardian." << endl;
+        cout << "\nGoodbye Guardian, see you on your next space mission.." << endl;
         exit(0); 
     }
 }
@@ -82,9 +82,9 @@ bool Game::visitPlanet(const string& planetName) {
     bool result = false;
     // === SPECIAL FINAL PLANET: NEPTUNE ===
     if (planetName == "Neptune") {
-        cout << "\n🌌 Welcome to Neptune... the Final Frontier." << endl;
-        cout << "This is your last challenge. No second chances." << endl;
-        cout << "Are you ready for the final challenge? Press X to begin..." << endl;
+        cout << "\n🌌 Finally, you reach Neptune... the final frontier. Here, you will put everything you've learned on your journey to the test. The fate of the universe depends on you. If you can overcome this challenge, order will be restored, and your name will be remembered as the Guardian who saved the galaxy. We trust in you, Guardian." << endl;
+        cout << "This is your final challenge; your spacesuit is about to break. There are no second chances." << endl;
+        cout << "Ready for the final challenge? It's the step to complete your mission. Be very careful, there's a lot to be learned at this point. Press X to begin..." << endl;
 
         char input;
         cin >> input;
@@ -101,7 +101,7 @@ bool Game::visitPlanet(const string& planetName) {
         if (result) {
             int reward = 200;
             player.earnMoney(reward);
-            cout << "You won the final challenge! +200 coins." << endl;
+            cout << "Congratulations, Guardian! You've won the final challenge! Your name will be remembered throughout space for a lifetime. +200 coins." << endl;
             return true;
         } else {
             player.loseLife();
@@ -112,13 +112,13 @@ bool Game::visitPlanet(const string& planetName) {
 
     // Different descriptions for each planet
     if (planetName == "Mercury") {
-        cout << "The closest planet to the sun. Extreme temperatures await..." << endl;
+        cout << "The universe is in danger, and only a Guardian can restore order. Your mission begins on Mercury, where extreme heat challenges your resolve and marks the beginning of your journey for galactic peace." << endl;
     } else if (planetName == "Venus") {
-        cout << "The hottest planet in our solar system. Acid rain falls from toxic clouds..." << endl;
+        cout << "After passing Mercury, you reach Venus. Toxic clouds and acid rain test your ingenuity as you advance in your mission to restore harmony to the cosmos." << endl;
     } else if (planetName == "Mars") {
-        cout << "The red planet. Ancient ruins and mysterious signals detected..." << endl;
+        cout << "On Mars, ancient ruins and mysterious signs remind you that chaos threatens even lost civilizations. Your courage and purpose grow stronger with every step." << endl;
     } else if (planetName == "Jupiter") {
-        cout << "The largest planet. Massive storms rage across its surface..." << endl;
+        cout << "Jupiter, the storm giant, is your last stop before your final destination. Here, the challenges are colossal, but your Guardian spirit shines brighter than ever in defense of universal balance." << endl;
     }
     
     cout << "You must choose a path:" << endl;
@@ -148,16 +148,16 @@ bool Game::visitPlanet(const string& planetName) {
     if (choice == 1) {
         // Different entry messages for each planet
         if (planetName == "Mercury") {
-            cout << "You navigate through intense solar flares..." << endl;
+            cout << "In one corner of the universe, balance is at stake. As a Space Ranger, your mission is to restore order and protect galactic peace. Your journey begins on Mercury, the fiery sentinel of the solar system. The extreme heat tests your ship and your courage, but you know that every mission begins with a brave first step." << endl;
          result = memoryGame();
         } else if (planetName == "Venus") {
-            cout << "You brave the corrosive acid rain..." << endl;
+            cout << "After overcoming the trials of Mercury, you arrive on Venus. Toxic clouds and acid rain hide ancient secrets. Here, the Guardian must rely on their wits to navigate the beauty and danger, while the forces of chaos lurk in the shadows." << endl;
             result= PlayMixLaboratory();
         } else if (planetName == "Mars") {
-            cout << "You push through the blinding sandstorm..." << endl;
+            cout << "The journey takes you to Mars, the red planet. Amidst forgotten ruins and mysterious signs, you feel you are not alone. Every step reveals fragments of a lost civilization and unexpected challenges, but your determination to restore order does not waver." << endl;
             result = oddOneGame();
         } else if (planetName == "Jupiter") {
-            cout << "You enter the massive Great Red Spot..." << endl;
+            cout << "Your ship is approaching Jupiter, the giant of eternal storms. Colossal lightning and winds threaten your mission, but the hope of restoring harmony to the universe drives you forward, facing your greatest dangers yet." << endl;
             result = galactic_escape_play();
         }
         
