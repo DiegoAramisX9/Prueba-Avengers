@@ -3,6 +3,8 @@
 #include <windows.h>
 #include <ctime>
 #include "galactic_escape.h"
+#include "Utils.h"
+
 using namespace std;
 
 const int HEIGHT = 15;
@@ -16,7 +18,23 @@ const int GOAL_SCORE = 100;
 void show_start_screen()
 {
     system("cls");
-    cout << "================ GALACTIC ESCAPE ================\n";
+    setColor(10); // Blue
+    cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+    setColor(9); // Yellow (ASCII)
+    cout << R"(
+   _____       _            _   _        ______                          
+  / ____|     | |          | | (_)      |  ____|                         
+ | |  __  __ _| | __ _  ___| |_ _  ___  | |__   ___  ___ __ _ _ __   ___ 
+ | | |_ |/ _` | |/ _` |/ __| __| |/ __| |  __| / __|/ __/ _` | '_ \ / _ \
+ | |__| | (_| | | (_| | (__| |_| | (__  | |____\__ \ (_| (_| | |_) |  __/
+  \_____|\__,_|_|\__,_|\___|\__|_|\___| |______|___/\___\__,_| .__/ \___|
+                                                             | |         
+                                                             |_|         
+)" << endl;
+    setColor(10); // green
+    cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+    setColor(7); // Reset
+
     cout << "You are scaping in a spaceship. Your goal is reach " << GOAL_SCORE << " points to escape.\n";
     cout << "Evade obstacles (x) by moving between 3 ways.\n";
     cout << "Controls:\n";

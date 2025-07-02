@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "FinalBattle.h"
+#include "Utils.h"
 
 using namespace std;
 
@@ -45,7 +46,22 @@ bool finalBattle() {
     int dronesDestroyed = 0;
     const int totalDrones = 7;
 
-    cout << "=== FINAL BATTLE: ORBITAL DEFENSE ===\n";
+    setColor(10); // green
+    cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+    setColor(12); // red
+    cout << R"(
+  ______ _____ _   _          _        ____       _______ _______ _      ______ 
+ |  ____|_   _| \ | |   /\   | |      |  _ \   /\|__   __|__   __| |    |  ____|
+ | |__    | | |  \| |  /  \  | |      | |_) | /  \  | |     | |  | |    | |__   
+ |  __|   | | | . ` | / /\ \ | |      |  _ < / /\ \ | |     | |  | |    |  __|  
+ | |     _| |_| |\  |/ ____ \| |____  | |_) / ____ \| |     | |  | |____| |____ 
+ |_|    |_____|_| \_/_/    \_\______| |____/_/    \_\_|     |_|  |______|______|
+                                                                                                                                             
+)" << endl;
+    setColor(10); // green
+    cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+    setColor(7); // Reset
+    cout << "=== ORBITAL DEFENSE ===\n";
     cout << "It weird, you enter pluton but nobody is here, maybe they set a trap for me\n";
     cout << "I better do this quick\n";
     cout << "You have reached the relic... but IT WAS AN AMBUSH AND ENEMY DRONES ARE ATTACKING!\n";

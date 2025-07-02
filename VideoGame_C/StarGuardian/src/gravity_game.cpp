@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
+#include "Utils.h"
+
 using namespace std;
 
 int playerX = 0, playerY = 0;
@@ -95,7 +97,21 @@ void movePlayer(int dx, int dy) {
 }
 
 bool gravityMaze() {
-    cout << "=== GRAVITY MAZE ===\n";
+    setColor(12); // Red
+    cout << "╔══════════════════════════════════════════════════════════════╗" << endl;
+    setColor(14); // Blue
+    cout << R"(
+                                                    
+ _____             _ _          _____               
+|   __|___ ___ _ _|_| |_ _ _   |   __|___ _____ ___ 
+|  |  |  _| .'| | | |  _| | |  |  |  | .'|     | -_|
+|_____|_| |__,|\_/|_|_| |_  |  |_____|__,|_|_|_|___|
+                        |___|                       
+)" << endl;
+    setColor(12); // red
+    cout << "╚══════════════════════════════════════════════════════════════╝" << endl;
+    setColor(7); // Reset
+
     cout << "You have fallen into a gravitational maze, and you must escape. \n";
     cout << "Figure out the path to the other side of the maze. The bottom-right corner (4,4).\n";
     cout << "Remember that you must follow the direction of gravity, or you will return to the starting point.\n";
