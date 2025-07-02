@@ -19,17 +19,36 @@ The game progresses through a story, in which the player will have the ability t
 **Conditional Structures: If/Else**: This is present in the vast majority of minigames. In the game.cpp file, you can see this in the player's decision-making process, choosing which path to take, thus presenting them with one game or another.
 **Variables and Data Types**: This game uses int, bool, string, char, void, etc. variables. These are present in all games. Bool variables are used for functions; they define whether the player wins or loses the game.
 The others are used in games that require the use of numbers, such as Math Duel or Mix Laboratory. String is used extensively in the Encrypted game, where words must be typed.
-**Vectors**: The use of vectors is reflected in the Encrypted game, where string-type words are stored within a vector..
+**Vectors**: The use of vectors is reflected in the Encrypted game, where string-type words are stored within a vector.
+**Loops**: Loops like while or for are mostly use on the minigames. For example, in OddOneGame the game is based on a for loop in order to create the matrix to find the different number or in Encrypted game where it use both in order to evaluate if the player type the answer correctly.
 
 ## Technical considerations of development
-1. Install visual studio code 
+1. Install visual studio code: It is the application where you can play the game.
 
-1. Clone this repository to your local machine:
-https://github.com/FDP-01-2025/project-team-avengers.git
+2. Install minGW64: This a compiler that will help you create .exe archives in programming languages like c++ on visual studio code.
 
-2. 
+3. Install Git for windows: This application will help you clone the link of the github repository into your computer.
+
+4. Clone this repository to your local machine: Right click on your screen, now click on open git bash here and a tab will open. Copy the line below:
+git clone https://github.com/FDP-01-2025/project-team-avengers.git
+
+5. A new file will be created on your desktop, open that file, right click on it and click again on open git bash here, now type " code ." and click enter.
+
+5. When the code open on visual studio, click on terminal, then in New Terminal.
+
+6. The **first** command you will paste on the terminal is:
+cd .\VideoGame_C\StarGuardian\
+
+7. The **second** command is:
+g++ main.cpp Game.cpp Player.cpp src/MemoryGame.cpp src/ReactionGame.cpp src/Encrypted.cpp src/MixLaboratory.cpp src/OddOneGame.cpp src/FinalBattle.cpp src/mathDuel.cpp src/galactic_escape.cpp src/gravity_game.cpp src/Utils.cpp -o output/star_guardian.exe
+
+8. And the **third** command is:
+.\output\star_guardian.exe
+
+9. Now the game will start on your console
 
 ## Images or mockups of the game
+![alt text](Mockup.jpg)
 
 ## Full names of all members
 1. Diego Aramis Villanueva Caballero 
