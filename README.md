@@ -22,6 +22,8 @@ The others are used in games that require the use of numbers, such as Math Duel 
 **Vectors**: The use of vectors is reflected in the Encrypted game, where string-type words are stored within a vector..
 
 ## Technical considerations of development
+1. Install visual studio code 
+
 1. Clone this repository to your local machine:
 https://github.com/FDP-01-2025/project-team-avengers.git
 
