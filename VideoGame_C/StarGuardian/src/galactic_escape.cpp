@@ -38,7 +38,7 @@ void show_start_screen()
     cout << "You are scaping in a spaceship. Your goal is reach " << GOAL_SCORE << " points to escape.\n";
     cout << "Evade obstacles (x) by moving between 3 ways.\n";
     cout << "Controls:\n";
-    cout << "  <- y -> to move.\n";
+    cout << "  <- = A y D = -> to move.\n";
     cout << "  E to start.\n";
     cout << "  Q to leave\n";
     cout << "==================================================\n";

@@ -30,6 +30,7 @@ bool checkAnswer(const std::string& original, const std::string& answer) {
 }
 
 // Main game logic
+
 bool encryptedGame() {  
     srand((unsigned)time(0));
     std::vector<std::string> wordList = {"ASTEROID", "ASTRONAUT", "ATMOSPHERE", "PLANETARY", "ENIGMA", "GUARDIAN"};
