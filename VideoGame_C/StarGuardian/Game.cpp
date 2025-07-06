@@ -47,6 +47,17 @@ void Game::start() {
         cout << "\n🎉 CONGRATULATIONS! 🎉" << endl;
         cout << "You've completed your journey through all " << totalPlanets << " planets!" << endl;
         cout << "Final score: " << player.getMoney() << " coins" << endl;
+
+        // Debug: mostrar vidas y monedas finales
+        cout << "[DEBUG] Vidas finales: " << player.getLives() << ", Monedas finales: " << player.getMoney() << endl;
+
+        if (player.getLives() > 2) {
+            cout << "🏆 TROPHY: Guardian of Steel! You finished the adventure with more than 2 lives. Incredible resilience!" << endl;
+        }
+        
+        if (player.getMoney() > 500) {
+            cout << "🏆 TROPHY: Galactic Tycoon! You finished with more than 500 coins. Your fortune is legendary!" << endl;
+        }
     }
 }
 
